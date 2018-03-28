@@ -11,13 +11,13 @@ FRenameInformation* FRenameToolHelper::GetRenameInformation()
 
 void FRenameToolHelper::Rename(ERenameAction NewRenameAction)
 {
+	RenameInformation.SetRenameAction(NewRenameAction);
 	if (bSetChangeAsset)
 	{
 		FContentBrowserModule& ContentBrowserModule = FModuleManager::LoadModuleChecked<FContentBrowserModule>("ContentBrowser");
 		TArray<FAssetData> SelectedAssets;
 		ContentBrowserModule.Get().GetSelectedAssets(SelectedAssets);
 
-		RenameInformation.SetRenameAction(NewRenameAction);
 		int32 Index = 0;
 		for (auto AssetIt = SelectedAssets.CreateIterator(); AssetIt; ++AssetIt)
 		{
@@ -76,6 +76,7 @@ FRenameToolHelper::FRenameToolHelper()
 {
 	RenameInformation = FRenameInformation::FRenameInformation();
 }
+
 void FRenameToolHelper::SetAssetNewName(UObject* Asset, int Index)
 {
 	FString NewName;
@@ -118,32 +119,32 @@ void FRenameToolHelper::SetActorNewName(AActor* Actor, int Index)
 	FString NewName;
 	switch (RenameInformation.GetRenameAction())
 	{
-	case ERenameAction::Fix:
-	{
-		NewName = RenameInformation.GetPrefix() + Actor->GetActorLabel() + RenameInformation.GetSuffix();
-	}break;
+		case ERenameAction::Fix:
+		{
+			NewName = RenameInformation.GetPrefix() + Actor->GetActorLabel() + RenameInformation.GetSuffix();
+		}break;
 
-	case ERenameAction::FindAndReplace:
-	{
-		NewName = Actor->GetActorLabel().Replace(*RenameInformation.GetFindStr(), *RenameInformation.GetTargetStr());
-		NewName = TEXT(" ") + NewName;
-	}break;
+		case ERenameAction::FindAndReplace:
+		{
+			NewName = Actor->GetActorLabel().Replace(*RenameInformation.GetFindStr(), *RenameInformation.GetTargetStr());
+			NewName = TEXT(" ") + NewName;
+		}break;
 
-	case ERenameAction::RenameAndNumerate:
-	{
-		NewName = RenameInformation.GetName() + FString::FromInt(RenameInformation.GetStartNumber() + Index);
-		NewName = TEXT(" ") + NewName;
-	}break;
+		case ERenameAction::RenameAndNumerate:
+		{
+			NewName = RenameInformation.GetName() + FString::FromInt(RenameInformation.GetStartNumber() + Index);
+			NewName = TEXT(" ") + NewName;
+		}break;
 
-	case ERenameAction::ToLowerCase:
-	{
-		NewName = Actor->GetActorLabel().ToLower();
-	}break;
+		case ERenameAction::ToLowerCase:
+		{
+			NewName = Actor->GetActorLabel().ToLower();
+		}break;
 
-	case ERenameAction::ToUpperCase:
-	{
-		NewName = Actor->GetActorLabel().ToUpper();
-	}break;
+		case ERenameAction::ToUpperCase:
+		{
+			NewName = Actor->GetActorLabel().ToUpper();
+		}break;
 	}
 	Actor->Rename(*NewName);
 	Actor->SetActorLabel(NewName);
