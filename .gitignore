@@ -260,3 +260,8 @@ Engine/Source/ThirdParty/PhysX/PxShared/src/foundation/doc/*.doxyfile
 Engine/Source/ThirdParty/PhysX/PxShared/src/foundation/doc/*.chm
 Engine/Source/ThirdParty/PhysX/PxShared/src/foundation/samples/compiler/xpj/create_projects.cmd
 Engine/Source/ThirdParty/PhysX/PxShared/src/foundation/samples/compiler/xpj/TestFoundation.xpj
+Engine/Binaries/Win64/**
+Engine/Plugins/GameWorks/Blast/Binaries/**
+Engine/Plugins/GameWorks/Blast/Intermediate/**
+Engine/Plugins/GameWorks/NvFlow/Binaries/**
+Engine/Plugins/GameWorks/NvFlow/Intermediate/**
