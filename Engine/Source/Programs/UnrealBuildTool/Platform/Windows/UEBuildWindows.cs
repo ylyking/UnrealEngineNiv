@@ -397,16 +397,17 @@ namespace UnrealBuildTool
 				}
 			}
 
-			// Second, default based on what's installed, test for 2015 first
-			DirectoryReference VCInstallDir;
+            // Second, default based on what's installed, test for 2017 first
+            if (TryGetVCInstallDir(WindowsCompiler.VisualStudio2017, out VCInstallDir))
+            {
+                return WindowsCompiler.VisualStudio2017;
+            }
+            DirectoryReference VCInstallDir;
 			if (TryGetVCInstallDir(WindowsCompiler.VisualStudio2015, out VCInstallDir))
 			{
 				return WindowsCompiler.VisualStudio2015;
 			}
-			if (TryGetVCInstallDir(WindowsCompiler.VisualStudio2017, out VCInstallDir))
-			{
-				return WindowsCompiler.VisualStudio2017;
-			}
+
 
 			// If we do have a Visual Studio installation, but we're missing just the C++ parts, warn about that.
 			DirectoryReference VSInstallDir;
