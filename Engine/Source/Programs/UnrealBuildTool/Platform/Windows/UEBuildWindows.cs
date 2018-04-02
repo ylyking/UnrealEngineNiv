@@ -398,11 +398,11 @@ namespace UnrealBuildTool
 			}
 
             // Second, default based on what's installed, test for 2017 first
+            DirectoryReference VCInstallDir;
             if (TryGetVCInstallDir(WindowsCompiler.VisualStudio2017, out VCInstallDir))
             {
                 return WindowsCompiler.VisualStudio2017;
             }
-            DirectoryReference VCInstallDir;
 			if (TryGetVCInstallDir(WindowsCompiler.VisualStudio2015, out VCInstallDir))
 			{
 				return WindowsCompiler.VisualStudio2015;
