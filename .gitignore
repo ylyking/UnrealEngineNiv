@@ -224,6 +224,9 @@ BuildGraph.Automation.xml
 !/Documents/**
 !/Readme/**
 
+//flex icon
+!/Engine/Content/Editor/Slate/Icons/icon_StaticMeshEd_FlexPreview_40x.png
+
 #RenameToolPlugins
 !/Engine/Plugins/File/RenameTool/Resources/**
 
