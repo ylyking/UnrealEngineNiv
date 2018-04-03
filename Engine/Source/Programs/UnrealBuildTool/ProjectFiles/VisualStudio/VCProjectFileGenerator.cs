@@ -54,7 +54,7 @@ namespace UnrealBuildTool
 		/// The version of Visual Studio to generate project files for.
 		/// </summary>
 		[XmlConfigFile(Name = "Version")]
-		VCProjectFileFormat ProjectFileFormat = VCProjectFileFormat.Default;
+		VCProjectFileFormat ProjectFileFormat = VCProjectFileFormat.VisualStudio2017;
 
 		/// <summary>
 		/// Whether to add the -FastPDB option to build command lines by default
