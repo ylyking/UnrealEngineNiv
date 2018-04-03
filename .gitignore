@@ -230,6 +230,8 @@ BuildGraph.Automation.xml
 #RenameToolPlugins
 !/Engine/Plugins/File/RenameTool/Resources/**
 
+Engine/Plugins/GameWorks/NvFlow/Intermediate/**
+
 #Files about PhysX(It will download when run setup.bat)
 Engine/Source/ThirdParty/PhysX/Lib/**
 
