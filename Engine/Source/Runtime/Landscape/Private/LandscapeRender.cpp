@@ -2750,6 +2750,15 @@ public:
 			// Forward shading required
 			FName(TEXT("TBasePassPSFCachedPointIndirectLightingPolicySkylight")),
 			FName(TEXT("TBasePassPSFNoLightMapPolicySkylight")),
+
+			//game works
+			FName(TEXT("TVXGIVoxelizationPSFVXGIVoxelizationNoLightMapPolicy")),
+			FName(TEXT("TVXGIVoxelizationVSFVXGIVoxelizationNoLightMapPolicy")),
+			FName(TEXT("FFlexFluidSurfaceSpriteSphereThicknessPS")),
+			FName(TEXT("FFlexFluidSurfaceSpriteEllipsoidDepthPS")),
+			FName(TEXT("FFlexFluidSurfaceSpriteSphereDepthPS")),
+			FName(TEXT("FFlexFluidSurfaceSpriteEllipsoidVS")),
+			FName(TEXT("FFlexFluidSurfaceSpriteSphereVS")),
 		};
 		return AllowedShaderTypes;
 	}

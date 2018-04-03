@@ -5935,7 +5935,7 @@ void FSlateEditorStyle::FStyle::SetupClassIconsAndThumbnails()
 			TEXT("CameraRig_Crane"),
 			TEXT("CameraRig_Rail")
 // WaveWorks Start
-			TEXT("WaveWorks")
+			//,TEXT("WaveWorks")
 // WaveWorks End
 		};
 
